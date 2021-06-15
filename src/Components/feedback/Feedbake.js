@@ -34,7 +34,7 @@ class Feedbake extends Component {
     return this.state.good * 100;
   };
   positiveFeedback = () => {
-    return this.goodProcen() / this.totalFeedbak();
+    return (this.goodProcen() / this.totalFeedbak()).toFixed(2);
   };
 
   render() {
