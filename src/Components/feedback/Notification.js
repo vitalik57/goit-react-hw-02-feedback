@@ -1,4 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const Notification = () => <h2>No feedback given</h2>;
+const Notification = ({ message }) => <h2>{message}</h2>;
+Notification.prototype = {
+  message: PropTypes.string.isRequired
+};
 export default Notification;

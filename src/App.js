@@ -1,9 +1,9 @@
-import Feedbake from "./Components/feedback/Feedbake";
+import Feedbacke from "./Components/feedback/Feedbacke";
 
 function App() {
   return (
     <>
-      <Feedbake />
+      <Feedbacke />
     </>
   );
 }

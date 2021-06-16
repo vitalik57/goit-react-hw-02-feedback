@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import Section from "../../section/Section";
 import Buttons from "./Buttons";
 import Notification from "./Notification";
 import Spans from "./Spans";
 
-class Feedbake extends Component {
+class Feedbacke extends Component {
   state = { good: 0, neutral: 0, bad: 0 };
   // onClick={countGoodFeedback()}
   buttonGood = () => {
@@ -40,17 +41,22 @@ class Feedbake extends Component {
   render() {
     return (
       <div>
-        <section title="Please leave feedback" />
-        <div>
+        <Section title="Please leave feedback">
+          {" "}
           <Buttons buttonGood={this.buttonGood} buttonneutral={this.buttonneutral} buttonBad={this.buttonBad} />
+        </Section>
+
+        <div>
           {this.totalFeedbak() ? (
-            <Spans
-              good={this.state.good}
-              neutral={this.state.neutral}
-              bad={this.state.bad}
-              positiveFeedback={this.positiveFeedback}
-              totalFeedbak={this.totalFeedbak}
-            />
+            <Section title="Statistics">
+              <Spans
+                good={this.state.good}
+                neutral={this.state.neutral}
+                bad={this.state.bad}
+                positiveFeedback={this.positiveFeedback}
+                totalFeedbak={this.totalFeedbak}
+              />
+            </Section>
           ) : (
             <Notification message="No feedback given" />
           )}
@@ -60,4 +66,4 @@ class Feedbake extends Component {
   }
 }
 
-export default Feedbake;
+export default Feedbacke;

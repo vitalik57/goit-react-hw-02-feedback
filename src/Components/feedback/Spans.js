@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./Spans.module.css";
+import PropTypes from "prop-types";
+
 const Spans = ({ good, neutral, bad, totalFeedbak, positiveFeedback }) => {
   return (
     <>
@@ -11,5 +13,11 @@ const Spans = ({ good, neutral, bad, totalFeedbak, positiveFeedback }) => {
     </>
   );
 };
-
+Spans.prototype = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  totalFeedbak: PropTypes.func.isRequired,
+  positiveFeedback: PropTypes.func.isRequired
+};
 export default Spans;
